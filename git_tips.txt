@@ -1,4 +1,4 @@
-#Config#
+# Config #
 git config --global user.name "xxx"
 git config --global user.email "xx@xx.x" // should match github account and ssh-key
 

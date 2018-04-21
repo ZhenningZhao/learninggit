@@ -1,36 +1,41 @@
-# Config #
-git config --global user.name "xxx"
-git config --global user.email "xx@xx.x" // should match github account and ssh-key
-
-#
-git init  // initialize current folder and make it as an empty repository
-
-# Basic Concpet #
+## Basic Concpet ##
 
 1) Working Directory:
 
-The VISYBLE content in the folder ( associated to the repo ).
+The VISIBLE content in the folder ( associated to the repo ).
 
-2) Repository
+2) Repository:
 
 The .git (invisble) in the folder
 
 2.1) Stage   // buffer
 
-2.2) Master  // main branch
+2.2) Master  // main branch or pointer on main branch
 
-2.3) HEAD    // Pointor
+2.3) HEAD    // Pointor to master or other branch pointer
 
-# dsicard change in working directory
 
+## Config ##
+
+git config --global user.name "xxx"
+git config --global user.email "xx@xx.x" // should match github account and ssh-key
+
+## Using Git ##
+
+# Initialize a folder 
+git init  // initialize current folder and make it as an empty repository
+
+# Discard changes in working directory
 git checkout -- "file name" // checkout from stage + branch, go back the status of previus git add.
-
 git reset HEAD "file name" // Unstanged changes, stage is clear for thir file after run this CLI. The change is kept in working directory.
 
+# Add file in stage
 git add "file name"  // Add file change from working directory to stage.
 
+# Commit file from stage
 git commit -m "commit message" // commit the content in stage to current branch
 
+# diff
 git diff "file name" // diff between the content in working directory and the one in xxx???
 
 git status // show the status of gongzuoqu
@@ -45,6 +50,37 @@ git reset --hard "commit id"
 
 git reflog
 
+## branching handling ##
 
+#create branch
+git branch xxx
 
+#switch to branch
+git checkout xxx
 
+#create and switch to branch
+git checkout -b xxx
+
+#show branch
+git branch
+
+#merge current branch to specific branch
+git merge xxx
+git merge --no-ff -m "xx" xxx // no fast forward mode
+
+#del branch
+git branch -d xxx
+
+#show branch mergeing situtaion
+git log --graph --pretty=oneline --abbrev-commit
+
+#Save current working ( working directory and stage )
+git stash
+
+git stash list
+
+git stash apply // keep the stashed content
+
+git stash drop // remove the stashed content
+
+git stash pop // not keep the stashed content

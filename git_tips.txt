@@ -21,13 +21,17 @@ The .git (invisble) in the folder
 
 2.3) HEAD    // Pointor
 
+# dsicard change in working directory
 
+git checkout -- "file name" // checkout from stage + branch, go back the status of previus git add.
+
+git reset HEAD "file name" // Unstanged changes, stage is clear for thir file after run this CLI. The change is kept in working directory.
 
 git add "file name"  // Add file change from working directory to stage.
 
-git commit -m "commit message" // Submit the content in stage to current branch
+git commit -m "commit message" // commit the content in stage to current branch
 
-git diff "file name"
+git diff "file name" // diff between the content in working directory and the one in xxx???
 
 git status // show the status of gongzuoqu
 

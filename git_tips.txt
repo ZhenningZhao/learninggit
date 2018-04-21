@@ -1,0 +1,46 @@
+#Config#
+git config --global user.name "xxx"
+git config --global user.email "xx@xx.x" // should match github account and ssh-key
+
+#
+git init  // initialize current folder and make it as an empty repository
+
+# Basic Concpet #
+
+1) Working Directory:
+
+The VISYBLE content in the folder ( associated to the repo ).
+
+2) Repository
+
+The .git (invisble) in the folder
+
+2.1) Stage   // buffer
+
+2.2) Master  // main branch
+
+2.3) HEAD    // Pointor
+
+
+
+git add "file name"  // Add file change from working directory to stage.
+
+git commit -m "commit message" // Submit the content in stage to current branch
+
+git diff "file name"
+
+git status // show the status of gongzuoqu
+
+git log
+
+git reset
+
+git reset --hard HEAD^
+
+git reset --hard "commit id"
+
+git reflog
+
+
+
+

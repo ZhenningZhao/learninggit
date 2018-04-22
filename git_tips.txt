@@ -32,13 +32,20 @@ git reset HEAD "file name" // Unstanged changes, stage is clear for thir file af
 # Add file in stage
 git add "file name"  // Add file change from working directory to stage.
 
+# add 'RM file' (change) in stage
+git rm "file name"
+
 # Commit file from stage
 git commit -m "commit message" // commit the content in stage to current branch
 
 # diff
 git diff "file name" // diff between the content in working directory and the one in xxx???
+git diff HEAD -- xxx // diff file xxx between the content in working directory and the one lastest version in repository.
+
+
 
 git status // show the status of gongzuoqu
+
 
 git log
 

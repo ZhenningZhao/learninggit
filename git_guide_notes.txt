@@ -1,0 +1,60 @@
+/* Run git in windows */
+1) Install msysgit
+2) In Windows, run 'Git Bash' to start git CLI
+3) Setting:
+	$ git config --global user.name "Your Name"
+	$ git config --global user.email "email@example.com"
+4) By default, all git repos on this computer will use the configuration above.
+
+/* Create a repo */
+1) Make an empty folder
+2) Init this folder as a repo which can be managed by Git
+	$ git init
+	Initalized empty Git repository in /folder_name/.git/
+3) Add files into repo
+	Suggest using UTF-8 without BOM
+	$ git add readme1.txt
+	$ git add readme2.txt  /* add change to stage */
+	$ git commit -m "comments" /* submit all info to branch */
+
+ +--Work Area--+       +-Repo------------------- ---------------------+
+ |             |       |                  Head-\                      |
+ |             |       |  +- Stage ----+        |   +- Master ----+   |
+ |             |       |  |            |        +---|->M          |   |
+ |             |git add|  |            |            |  |          |   |
+ | readme.txt -|-------|->| readme.txt | git commit |  |          |   |
+ |             |       |  |            |----------->|  |\         |   |
+ |             |       |  |            |            |  | \        |   |
+ |             |       |  |            |            |  |  |       |   |
+ |             |       |  +------------+            +-------------+   |
+ +-------------+       +----------------------------------------------+
+
+/* Show repo state */
+	$ git status
+
+/* Head Poiner */
+	HEAD represent current version
+	HEAD^ represent the last version
+	HEAD~100 向上100个版本
+	$ git reset --hard HEAD^ 回退到上一个版本
+
+git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最新版本的区
+	$ git diff
+
+	$ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最新版本的区别
+
+	$ git reset
+
+/* Show log */	
+	$ git log -- 显示从最近到最远的提交日志
+
+/* Show all history commands */
+	$ git reflog
+
+/* Concept of Checkout in Git */
+	$ git checkout -- readme.txt  /* 让文件回到最近一次git commit或者git add时的状态 */
+	可以用作丢弃某文件工作区的改动(如果没有git add)； 
+	如果已经git add，则 git reset HEAD readme.txt
+
+/* Remote repo */
+	$ git 

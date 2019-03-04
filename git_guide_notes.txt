@@ -60,9 +60,10 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 	/* Associate local repo to repo in Github. Under local reponame */
 	$ git remote add origian git@github.com:username/reponame.git
 	/* Push all content in local repo to repo in Github */
-	$ git push -u origin master
+	$ git push -u origin master /* 远程仓库的默认名称是origin */
 	/* Push new/addtional change into Github */
-	$ git push origin master
+	$ git push origin master /* push local master branch to remote */
+	$ git push origin dev /* push local dev branch to remote */
 	/* Clone repo from Github. Under work dictionary: */
 	$ git clone git@github.com:username/reponame.git
 	$ cd reponame
@@ -75,25 +76,32 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 	$ git branch dev  /* Create branch dev */
 	$ git checkout dev  /* Switch to dev branch */
 	Switched to branch 'dev'-b dev
-    $ git checkout master /* SWitch back to master */
-    $ git merge dev  /* merge dev into master */
-    $ git branch -d dev /* Delete branch dev */
-    $ git branch /* Show branch */
-    * master
-    $ git status /* Include the conflict information */
-    $ git log --graph /* Show the branch and merge graph */
-    $ git merge --no-ff -m "comments" dev /* no fast forward mode */
-                  
-                  HEAD-->master
-                           |
-                           v
-    O--------O-------O-----O
-                      \   /
-                       \ /
-                        O                   
-                        ^
-                        |
-                       dev
-/* Stash -- save working */
+	$ git checkout master /* SWitch back to master */
+	$ git merge dev  /* merge dev into master */
+	$ git branch -d dev /* Delete branch dev */
+	$ git branch /* Show branch */
+	* master
+	$ git status /* Include the conflict information */
+	$ git log --graph /* Show the branch and merge graph */
+	$ git merge --no-ff -m "comments" dev /* no fast forward mode */
+	              
+	              HEAD-->master
+	                       |
+	                       v
+	O--------O-------O-----O
+	                  \   / 
+	                   \ /
+	                    O                   
+	                    ^
+	                    |
+	                   dev
+/* Stash -- 贮藏,暂存工作现场 */
+	$ git stash /* Then git status will be clean */
+	$ git stash list
+	$ git stash pop /* Recover and remove the stash */
+
+/* Show remote repo info */
+	$ git remote -v /* The default name of remote repo is origin */
+
 
 

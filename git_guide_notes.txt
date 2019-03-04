@@ -57,4 +57,31 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 	如果已经git add，则 git reset HEAD readme.txt
 
 /* Remote repo */
-	$ git 
+	/* Associate local repo to repo in Github. Under local reponame */
+	$ git remote add origian git@github.com:username/reponame.git
+	/* Push all content in local repo to repo in Github */
+	$ git push -u origin master
+	/* Push new/addtional change into Github */
+	$ git push origin master
+	/* Clone repo from Github. Under work dictionary: */
+	$ git clone git@github.com:username/reponame.git
+	$ cd reponame
+
+/* Create and merge branch */
+	/* Create dev branch and swithed to dev branch */
+	$ git checkout -b dev
+	Switched to a new branch 'dev'
+	Or:
+	$ git branch dev  /* Create branch dev */
+	$ git checkout dev  /* Switch to dev branch */
+	Switched to branch 'dev'-b dev
+    $ git checkout master /* SWitch back to master */
+    $ git merge dev  /* merge dev into master */
+    $ git branch -d dev /* Delete branch dev */
+    $ git branch /* Show branch */
+    * master
+    $ git status /* Include the conflict information */
+    $ git log --graph /* Show the branch and merge graph */
+    $ git merge --no-ff -m "comments" dev /* no fast forward mode */
+    
+

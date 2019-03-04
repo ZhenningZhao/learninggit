@@ -83,5 +83,17 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
     $ git status /* Include the conflict information */
     $ git log --graph /* Show the branch and merge graph */
     $ git merge --no-ff -m "comments" dev /* no fast forward mode */
-    
+                  
+                  HEAD-->master
+                           |
+                           v
+    O--------O-------O-----O
+                      \   /
+                       \ /
+                        O                   
+                        ^
+                        |
+                       dev
+/* Stash -- save working */
+
 

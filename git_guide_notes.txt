@@ -95,6 +95,7 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 	                    ^
 	                    |
 	                   dev
+
 /* Stash -- 贮藏,暂存工作现场 */
 	$ git stash /* Then git status will be clean */
 	$ git stash list
@@ -102,6 +103,60 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 
 /* Show remote repo info */
 	$ git remote -v /* The default name of remote repo is origin */
+	$ git clone git@github.com:username/reponame.git
+	$ cd reponame
+	$ git checkout -b dev origin/dev /* 创建远程origin的dev分⽀到本地,分支名最好一致 */
+	$ git commit -m "xxx"
+	$ git push origin dev /* push to remove dev branch */
+
+/* Resolve Conflict */
+	$ git push origin dev
+	/* Failure here */
+	$ git branch --set-upstream dev origin/dev
+	/* Branch dev set up to track remote branch dev from origin. */
+	/* 指定本地dev分⽀与远程origin/dev分⽀的链接 */
+	$ git pull
+	/* Resolve Conflict Here */
+	$ git commit -m "comments"
+	$ git push origin dev
+
+/* Tag */
+	/* Tag的本质是指向某个commit的指针 */
+	$ git branch
+	* dev
+	 master
+	$ git checkout master
+	Switched to branch 'master'
+    $ git tag v1.0
+    $ git tag 
+    v1.0
+    $ git tag v0.9 6224937 /* 6224937 is a commit ID */
+    $ git tag
+	v0.9
+	v1.0
+	$ git show v0.9
+	/* 还可以创建带有说明的标签，⽤-a指定标签名，-m指定说明⽂字：*/
+	$ git tag -a v0.1 -m "version 0.1 released" 3628164
+	/* 删除标签 */
+	$ git tag -d v0.1
+	Deleted tag 'v0.1' (was e078af9)
+	/* 推送标签到远程 */
+	$ git push origin v1.0
+	/* ⼀次性推送全部尚未推送到远程的本地标签：*/
+	$ git push origin --tags
+	/* 如果标签已经推送到远程，要删除远程标签就⿇烦⼀点，先从本地删除：*/
+	$ git tag -d v0.9
+	Deleted tag 'v0.9' (was 6224937)
+	然后，从远程删除。删除命令也是push，但是格式如下：
+	$ git push origin :refs/tags/v0.9
+
+/* GitHub */
+	/* 如何参与⼀个开源项目呢？⽐如⼈⽓极⾼的bootstrap，这是⼀个⾮常强⼤的CSS框 */
+	/* 架，你可以访问它的主页https://github.com/twbs/bootstrap，点“Fork”,就在 */
+	/* ⾃⼰的账号下克隆了⼀个bootstrap仓库，然后，从⾃⼰的账号下clone：*/
+	/* 如果你希望bootstrap的官⽅库能接受你的修改，你就可以在GitHub上发起⼀个pull */
+	/* request。 */
+
 
 
 

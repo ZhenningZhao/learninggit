@@ -151,10 +151,9 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 	$ git push origin :refs/tags/v0.9
 
 /* GitHub */
-	/* 如何参与⼀个开源项目呢？⽐如⼈⽓极⾼的bootstrap，这是⼀个⾮常强⼤的CSS框 */
-	/* 架，你可以访问它的主页https://github.com/twbs/bootstrap，点“Fork”,就在 */
+	/* 如何参与⼀个开源项目呢？你可以访问它的主页，点“Fork”,就在 */
 	/* ⾃⼰的账号下克隆了⼀个bootstrap仓库，然后，从⾃⼰的账号下clone：*/
-	/* 如果你希望bootstrap的官⽅库能接受你的修改，你就可以在GitHub上发起⼀个pull */
+	/* 如果你希望官⽅库能接受你的修改，你就可以在GitHub上发起⼀个pull */
 	/* request。 */
 
 

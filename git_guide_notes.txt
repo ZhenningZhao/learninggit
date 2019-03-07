@@ -156,6 +156,7 @@ git diff HEAD -- readme.txt”命令可以查看⼯作区和版本库⾥⾯最�
 	/* 如果你希望官⽅库能接受你的修改，你就可以在GitHub上发起⼀个pull */
 	/* request。 */
 
-
+/* Open issues */
+	What is the differenet between git pull and git fetch?
 
 
